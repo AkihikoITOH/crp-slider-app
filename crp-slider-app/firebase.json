@@ -7,7 +7,7 @@
     "indexes": "firestore.indexes.json"
   },
   "hosting": {
-    "public": "public",
+    "public": "dist/crp-slider-app",
     "ignore": [
       "firebase.json",
       "**/.*",
