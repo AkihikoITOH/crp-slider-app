@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
 
   // private items;
   public donationAmount = 50;
-  public componentDisplay = 0;
+  private componentDisplay = Math.random();
   public sliderColour = '';
 
   constructor(private db: AngularFirestore) { }
@@ -64,12 +64,20 @@ export class HomeComponent implements OnInit {
     return Math.round(this.donationAmount * 0.35);
   }
 
+  slider() {
+    return this.componentDisplay > 0.5;
+  }
+
+  checkmarks() {
+    return !this.slider();
+  }
+
   donate() {
     console.log('donationAmount', this.donationAmount)
     this.db.collection("donations").doc(uuid()).set({
-      amount: this.donationAmount,
+      amount: +this.donationAmount,
       timestamp: Date.now(),
-      page_type: 'slider'
+      page_type: this.slider() ? 'slider' : 'checkmarks'
     })
     .then(function() {
       console.log("Document successfully written!");
