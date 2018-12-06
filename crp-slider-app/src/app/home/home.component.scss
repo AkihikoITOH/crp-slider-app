@@ -26,6 +26,7 @@
   flex-direction: column;
   flex-basis: 100%;
   flex: 1;
+  padding: 0 18px;
 }
 
 .circle {
@@ -49,7 +50,7 @@
   width: 50%;
   height: 48px;
   border-radius: 30px;  
-  background: #5ECFE6;
+  background: #66cc00;
   outline: none;
   opacity: 0.7;
   -webkit-transition: .2s;
