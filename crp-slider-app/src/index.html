@@ -7,6 +7,20 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDlXh5wy4zt06TpBab_6EatamQMVs-qcK4",
+      authDomain: "crp-slider-app.firebaseapp.com",
+      databaseURL: "https://crp-slider-app.firebaseio.com",
+      projectId: "crp-slider-app",
+      storageBucket: "crp-slider-app.appspot.com",
+      messagingSenderId: "271026784079"
+    };
+    firebase.initializeApp(config);
+  </script>
 </head>
 <body>
   <app-root></app-root>
