@@ -15,6 +15,7 @@ import { environment } from '../environments/environment';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 import { SliderComponent } from './home/shared/slider/slider.component';
 import { CheckboxesComponent } from './home/shared/checkboxes/checkboxes.component';
 
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent
+  },
+  {
+    path: 'checkout',
+    component: CheckoutComponent
   }
 ];
 
@@ -34,6 +39,7 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
+    CheckoutComponent,
     SliderComponent,
     CheckboxesComponent
   ],

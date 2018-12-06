@@ -1,4 +1,5 @@
 import { Component, OnInit, ElementRef, ViewChild, OnChanges } from '@angular/core';
+import { RouterModule } from "@angular/router";
 import { AngularFirestore } from '@angular/fire/firestore';
 import { v4 as uuid } from 'uuid';
 
@@ -74,10 +75,10 @@ export class HomeComponent implements OnInit {
   }
 
   donate() {
-    console.log('donationAmount', this.donationAmount)
-    this.db.collection("donations").doc(uuid()).set({
+    var now = new Date;
+    this.db.collection("donations").doc(""+now.getTime()).set({
       amount: +this.donationAmount,
-      timestamp: Date.now(),
+      timestamp: now.toUTCString(),
       page_type: this.slider() ? 'slider' : 'checkmarks'
     })
     .then(function() {
