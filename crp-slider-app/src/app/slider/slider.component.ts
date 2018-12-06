@@ -9,6 +9,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 
 export class SliderComponent implements OnInit {
   private items;
+  public donation;
 
   constructor(private db: AngularFirestore) { }
 
