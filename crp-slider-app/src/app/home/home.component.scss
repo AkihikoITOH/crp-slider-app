@@ -19,6 +19,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
+  padding-bottom: 12px;
 }
 
 .column {
@@ -89,6 +90,11 @@
   div {
     padding-bottom: 12px;
   }
+}
+
+.euro-amount {
+  color: #1C6E86;
+  font-size: 24px;
 }
 
 .trash-amount {
