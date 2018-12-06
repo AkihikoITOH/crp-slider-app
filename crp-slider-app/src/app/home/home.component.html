@@ -1,0 +1,76 @@
+<div class="content">
+  <div fxLayout='row' fxLayoutWrap>
+    <div fxFlex>
+      <div class="main-image"></div>
+    </div>
+  </div>
+
+  <div fxLayout='row' class="content-text">
+    <div fxFlex class="heading">
+      Hallo und Herzlich Willkommen
+    </div>
+    <div fxFlex>
+      Clean River Project e.V. ist eine gemeinnützige Organisation, die unsere Flüsse in Deutschland sauber hält. Heute kannst du uns dabei helfen, den Spendenprozess zu verbessern!
+    </div>
+
+    <div class='some-page-wrapper'>
+      <div class='row'>
+        <div class='column'>
+          <div>1</div>
+          <div class="heading">Test</div>
+          <div>Dies ist ein Test! Wenn du tatsächlich spenden willst, kannst du dues gerne im Anschluss tun!</div>
+        </div>
+        <div class='column'>
+          <div>2</div>
+          <div class="heading">Auswahl</div>
+          <div>Wähle mit dem Schlieberegler wahrheitsgemäß aus, was du zu spenden bereit wärst.</div>
+        </div>
+        <div class='column'>
+          <div>3</div>
+          <div class="heading">Klick</div>
+          <div>Klicke auf "Donate" um den Test abzuschließen und um Feedback zu erhalten.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDER -->
+  <div *ngIf="componentDisplay === 0"> 
+    <div class="slidecontainer">
+      <div>{{ donationAmount }}</div>
+      <input type="range" min="10" max="200" value="50" class="slider" id="myRange" [(ngModel)]="donationAmount">
+      <span class="trash-amount">{{ trashAmount() }}kg</span>
+    </div>
+  </div>
+
+  <!-- CHECKBOXES -->
+  <div *ngIf="componentDisplay === 1" class="checkboxes"> 
+    <div class='row'>
+      <div class='column'>
+        <label class="container">
+          <input type="checkbox" checked="checked">
+          <span class="checkmark"></span>
+          10 €
+        </label>
+      </div>
+      <div class='column'>
+        <label class="container">
+          <input type="checkbox" checked="checked">
+          <span class="checkmark"></span>
+          20 €
+        </label>
+      </div>
+      <div class='column'>
+        <label class="container">
+          <input type="checkbox" checked="checked">
+          <span class="checkmark"></span>
+          30 €
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center;">
+    <button class="button" (click)="donate()">Donate</button>
+  </div>
+</div>
