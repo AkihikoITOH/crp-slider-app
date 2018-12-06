@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -13,33 +14,32 @@ import { AngularFireMessagingModule } from '@angular/fire/messaging';
 import { environment } from '../environments/environment';
 
 import { AppComponent } from './app.component';
-import { SliderComponent } from './slider/slider.component';
-import { ButtonComponent } from './button/button.component';
+import { HomeComponent } from './home/home.component';
+import { SliderComponent } from './home/shared/slider/slider.component';
+import { CheckboxesComponent } from './home/shared/checkboxes/checkboxes.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'slider',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
   {
-    path: 'slider',
-    component: SliderComponent
-  },
-  {
-    path: 'button',
-    component: ButtonComponent
+    path: 'home',
+    component: HomeComponent
   }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
     SliderComponent,
-    ButtonComponent
+    CheckboxesComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     RouterModule.forRoot(routes),
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
