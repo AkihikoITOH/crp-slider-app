@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
   donate() {
     console.log('donationAmount', this.donationAmount)
     this.db.collection("donations").doc(uuid()).set({
-      amount: this.donationAmount,
+      amount: +this.donationAmount,
       timestamp: Date.now(),
       page_type: this.slider() ? 'slider' : 'checkmarks'
     })
