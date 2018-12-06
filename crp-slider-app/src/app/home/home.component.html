@@ -35,7 +35,7 @@
   </div>
 
   <!-- SLIDER -->
-  <div *ngIf="slider()">
+  <div *ngIf="showSlider()">
     <div class="slidecontainer">
       <div id="amount" #amount>{{ donationAmount }}</div>
       <input #slider type="range" min="10" max="100" class="slider" step="10" [(ngModel)]="donationAmount" (ngModelChange)="adjustStyles($event)">
@@ -44,7 +44,7 @@
   </div>
 
   <!-- CHECKBOXES -->
-  <div *ngIf="checkmarks()" class="checkboxes">
+  <div *ngIf="showCheckmarks()" class="checkboxes">
     <div class='row'>
       <div class='column'>
         <label class="container">

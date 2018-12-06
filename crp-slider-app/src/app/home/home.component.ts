@@ -64,12 +64,12 @@ export class HomeComponent implements OnInit {
     return Math.round(this.donationAmount * 0.35);
   }
 
-  slider() {
+  showSlider() {
     return this.componentDisplay > 0.5;
   }
 
-  checkmarks() {
-    return !this.slider();
+  showCheckmarks() {
+    return !this.showSlider();
   }
 
   donate() {
@@ -77,7 +77,7 @@ export class HomeComponent implements OnInit {
     this.db.collection("donations").doc(uuid()).set({
       amount: +this.donationAmount,
       timestamp: Date.now(),
-      page_type: this.slider() ? 'slider' : 'checkmarks'
+      page_type: this.showSlider() ? 'slider' : 'checkmarks'
     })
     .then(function() {
       console.log("Document successfully written!");
