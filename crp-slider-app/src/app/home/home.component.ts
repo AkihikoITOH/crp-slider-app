@@ -42,7 +42,7 @@ export class HomeComponent implements OnInit {
   }
 
   trashAmount() {
-    return Math.round(this.donationAmount * 2);
+    return Math.round(this.donationAmount * 0.35);
   }
 
   slider() {
