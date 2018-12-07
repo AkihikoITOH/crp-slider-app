@@ -77,10 +77,11 @@ export class HomeComponent implements OnInit {
   }
 
   donate() {
-    console.log('donationAmount', this.donationAmount)
-    this.db.collection("donations").doc(uuid()).set({
+    // console.log('donationAmount', this.donationAmount)
+    var now = new Date;
+    this.db.collection("donations").doc(""+now.getTime()).set({
       amount: +this.donationAmount,
-      timestamp: Date.now(),
+      timestamp: now.toUTCString(),
       page_type: this.slider() ? 'slider' : 'checkmarks'
     })
     .then(function() {
