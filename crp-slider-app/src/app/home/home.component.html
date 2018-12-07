@@ -38,7 +38,7 @@
   <div *ngIf="slider()">
     <div class="slide-container">
       <div id="amount" #amount class="euro-amount">{{ donationAmount }}€</div>
-      <input #slider type="range" min="10" max="100" class="slider" step="10" [(ngModel)]="donationAmount" (ngModelChange)="adjustStyles($event)">
+      <input #slider type="range" min="1" max="30" class="slider" [(ngModel)]="donationAmount" (ngModelChange)="adjustStyles($event)">
       <span class="trash-amount">{{ trashAmount() }}kg</span>
     </div>
   </div>
@@ -46,75 +46,60 @@
   <!-- CHECKBOXES -->
   <div *ngIf="checkboxes()" class="checkboxes">
     <div class='row'>
-      <div class='column'>
+      <div class="column">
+        <label class="container">
+          <input type="radio" name="donationAmount" value=1 [(ngModel)]="donationAmount">
+          1 €
+        </label>
+      </div>
+      <div class="column">
+        <label class="container">
+          <input type="radio" name="donationAmount" value=2 [(ngModel)]="donationAmount">
+          2 €
+        </label>
+      </div>
+      <div class="column">
+        <label class="container">
+          <input type="radio" name="donationAmount" value=5 [(ngModel)]="donationAmount">
+          5 €
+        </label>
+      </div>
+    </div>
+    <div class='row'>
+      <div class="column">
         <label class="container">
           <input type="radio" name="donationAmount" value=10 [(ngModel)]="donationAmount">
           10 €
         </label>
       </div>
-      <div class='column'>
+      <div class="column">
+        <label class="container">
+          <input type="radio" name="donationAmount" value=15 [(ngModel)]="donationAmount">
+          15 €
+        </label>
+      </div>
+      <div class="column">
         <label class="container">
           <input type="radio" name="donationAmount" value=20 [(ngModel)]="donationAmount">
           20 €
         </label>
       </div>
-      <div class='column'>
+    </div>
+    <div class='row'>
+      <div class="column">
         <label class="container">
+          <input type="radio" name="donationAmount" value=25 [(ngModel)]="donationAmount">
+          25 €
+        </label>
+      </div>
+      <div class="column">
+        <label class="container">
+          <span></span>
           <input type="radio" name="donationAmount" value=30 [(ngModel)]="donationAmount">
           30 €
         </label>
       </div>
-    </div>
-    <div class='row'>
-      <div class='column'>
-        <label class="container">
-          <input type="radio" name="donationAmount" value=40 [(ngModel)]="donationAmount">
-          40 €
-        </label>
-      </div>
-      <div class='column'>
-        <label class="container">
-          <input type="radio" name="donationAmount" value=50 [(ngModel)]="donationAmount">
-          50 €
-        </label>
-      </div>
-      <div class='column'>
-        <label class="container">
-          <input type="radio" name="donationAmount" value=60 [(ngModel)]="donationAmount">
-          60 €
-        </label>
-      </div>
-    </div>
-    <div class='row'>
-      <div class='column'>
-        <label class="container">
-          <input type="radio" name="donationAmount" value=70 [(ngModel)]="donationAmount">
-          70 €
-        </label>
-      </div>
-      <div class='column'>
-        <label class="container">
-          <span></span>
-          <input type="radio" name="donationAmount" value=80 [(ngModel)]="donationAmount">
-          80 €
-        </label>
-      </div>
-      <div class='column'>
-        <label class="container">
-          <input type="radio" name="donationAmount" value=90 [(ngModel)]="donationAmount">
-          90 €
-        </label>
-      </div>
-    </div>
-    <div class='row'>
-      <div class='column'>
-        <label class="container">
-          <input type="radio" name="donationAmount" value=100 [(ngModel)]="donationAmount">
-          100 €
-        </label>
-      </div>
-      <div class='column'></div>
-      <div class='column'></div>
+      <div class="column"></div>
     </div>
   </div>
 

@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   @ViewChild("amount") amount: ElementRef;
 
   // private items;
-  public donationAmount = 50;
+  public donationAmount = 15;
   private componentDisplay = Math.random();
   public sliderColour = '';
 
@@ -65,7 +65,7 @@ export class HomeComponent implements OnInit {
   }
 
   trashAmount() {
-    return Math.round(this.donationAmount * 0.35);
+    return Math.round(this.donationAmount * 2);
   }
 
   slider() {
@@ -77,7 +77,6 @@ export class HomeComponent implements OnInit {
   }
 
   donate() {
-    // console.log('donationAmount', this.donationAmount)
     var now = new Date;
     this.db.collection("donations").doc(""+now.getTime()).set({
       amount: +this.donationAmount,
@@ -90,6 +89,9 @@ export class HomeComponent implements OnInit {
     .catch(function(error) {
       console.error("Error writing document: ", error);
     });
-    this.router.navigate(['receipt']);
+
+    const params = {};
+    params['amount'] = this.donationAmount;
+    this.router.navigate(['receipt'], { queryParams: params });
   }
 }
