@@ -17,6 +17,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { SliderComponent } from './home/shared/slider/slider.component';
 import { CheckboxesComponent } from './home/shared/checkboxes/checkboxes.component';
+import { ReceiptComponent } from './receipt/receipt.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent
+  },
+  {
+    path: 'receipt',
+    component: ReceiptComponent
   }
 ];
 
@@ -35,7 +40,8 @@ const routes: Routes = [
     AppComponent,
     HomeComponent,
     SliderComponent,
-    CheckboxesComponent
+    CheckboxesComponent,
+    ReceiptComponent
   ],
   imports: [
     BrowserModule,

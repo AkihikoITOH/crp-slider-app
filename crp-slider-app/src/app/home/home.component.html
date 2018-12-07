@@ -1,6 +1,6 @@
 <div class="content">
-  <div fxLayout='row' fxLayoutWrap>
-    <div fxFlex>
+  <div class='row'>
+    <div class='column'>
       <div class="main-image"></div>
     </div>
   </div>
@@ -13,7 +13,7 @@
       Clean River Project e.V. ist eine gemeinnützige Organisation, die unsere Flüsse in Deutschland sauber hält. Heute kannst du uns dabei helfen, den Spendenprozess zu verbessern!
     </div>
 
-    <div class='some-page-wrapper'>
+    <div class='wrapper'>
       <div class='row'>
         <div class='column'>
           <div>1</div>
@@ -36,7 +36,7 @@
 
   <!-- SLIDER -->
   <div *ngIf="slider()">
-    <div class="slidecontainer">
+    <div class="slide-container">
       <div id="amount" #amount class="euro-amount">{{ donationAmount }}€</div>
       <input #slider type="range" min="10" max="100" class="slider" step="10" [(ngModel)]="donationAmount" (ngModelChange)="adjustStyles($event)">
       <span class="trash-amount">{{ trashAmount() }}kg</span>
@@ -48,21 +48,18 @@
     <div class='row'>
       <div class='column'>
         <label class="container">
-          <span class="checkmark"></span>
           <input type="radio" name="donationAmount" value=10 [(ngModel)]="donationAmount">
           10 €
         </label>
       </div>
       <div class='column'>
         <label class="container">
-          <span class="checkmark"></span>
           <input type="radio" name="donationAmount" value=20 [(ngModel)]="donationAmount">
           20 €
         </label>
       </div>
       <div class='column'>
         <label class="container">
-          <span class="checkmark"></span>
           <input type="radio" name="donationAmount" value=30 [(ngModel)]="donationAmount">
           30 €
         </label>
@@ -71,21 +68,18 @@
     <div class='row'>
       <div class='column'>
         <label class="container">
-          <span class="checkmark"></span>
           <input type="radio" name="donationAmount" value=40 [(ngModel)]="donationAmount">
           40 €
         </label>
       </div>
       <div class='column'>
         <label class="container">
-          <span class="checkmark"></span>
           <input type="radio" name="donationAmount" value=50 [(ngModel)]="donationAmount">
           50 €
         </label>
       </div>
       <div class='column'>
         <label class="container">
-          <span class="checkmark"></span>
           <input type="radio" name="donationAmount" value=60 [(ngModel)]="donationAmount">
           60 €
         </label>
@@ -94,21 +88,19 @@
     <div class='row'>
       <div class='column'>
         <label class="container">
-          <span class="checkmark"></span>
           <input type="radio" name="donationAmount" value=70 [(ngModel)]="donationAmount">
           70 €
         </label>
       </div>
       <div class='column'>
         <label class="container">
-          <span class="checkmark"></span>
+          <span></span>
           <input type="radio" name="donationAmount" value=80 [(ngModel)]="donationAmount">
           80 €
         </label>
       </div>
       <div class='column'>
         <label class="container">
-          <span class="checkmark"></span>
           <input type="radio" name="donationAmount" value=90 [(ngModel)]="donationAmount">
           90 €
         </label>
@@ -117,7 +109,6 @@
     <div class='row'>
       <div class='column'>
         <label class="container">
-          <span class="checkmark"></span>
           <input type="radio" name="donationAmount" value=100 [(ngModel)]="donationAmount">
           100 €
         </label>

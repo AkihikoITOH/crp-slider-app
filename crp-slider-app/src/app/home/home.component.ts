@@ -1,5 +1,6 @@
 import { Component, OnInit, ElementRef, ViewChild, OnChanges } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { Router } from '@angular/router';
 import { v4 as uuid } from 'uuid';
 
 @Component({
@@ -17,7 +18,9 @@ export class HomeComponent implements OnInit {
   private componentDisplay = Math.random();
   public sliderColour = '';
 
-  constructor(private db: AngularFirestore) { }
+  constructor(
+    private db: AngularFirestore,
+    private router: Router) { }
 
   ngOnInit() {
     // this.items = this.db.collection('items').valueChanges();
@@ -86,5 +89,6 @@ export class HomeComponent implements OnInit {
     .catch(function(error) {
       console.error("Error writing document: ", error);
     });
+    this.router.navigate(['receipt']);
   }
 }
