@@ -28,39 +28,16 @@ export class HomeComponent implements OnInit {
   }
 
   adjustStyles(value) {
-    switch (value) {
-      case 10:
-        this.sliderEl.nativeElement.style.backgroundColor = '#663300';
-        break;
-      case 20:
-        this.sliderEl.nativeElement.style.backgroundColor = '#663300';
-        break;
-      case 30:
-        this.sliderEl.nativeElement.style.backgroundColor =  '#996633';
-        break;
-      case 40:
-        this.sliderEl.nativeElement.style.backgroundColor =  '#996633';
-        break;
-      case 50:
-        this.sliderEl.nativeElement.style.backgroundColor =  '#66cc00';
-        break;
-      case 60:
-        this.sliderEl.nativeElement.style.backgroundColor =  '#66cc00';
-        break;
-      case 70:
-        this.sliderEl.nativeElement.style.backgroundColor =  '#00cc66';
-        break;
-      case 80:
-        this.sliderEl.nativeElement.style.backgroundColor =  '#00cc66';
-        break;
-      case 90:
-        this.sliderEl.nativeElement.style.backgroundColor =  '##00cccc';
-        break;
-      case 100:
-        this.sliderEl.nativeElement.style.backgroundColor =  '#5ECFE6';
-        break;
-      default:
-        break;
+    if (value <= 5) {
+      this.sliderEl.nativeElement.style.backgroundColor = '#663300';
+    } else if (value > 5 && value <= 10) {
+      this.sliderEl.nativeElement.style.backgroundColor = '#996633';
+    } else if (value > 10 && value <= 15) {
+      this.sliderEl.nativeElement.style.backgroundColor = '#66cc00';
+    } else if (value > 15 && value <= 20) {
+      this.sliderEl.nativeElement.style.backgroundColor = '#00cc66';
+    } else {
+      this.sliderEl.nativeElement.style.backgroundColor = '#5ECFE6';
     }
   }
 
