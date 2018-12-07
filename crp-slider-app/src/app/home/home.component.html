@@ -39,7 +39,7 @@
     <div class="slide-container">
       <div id="amount" #amount class="euro-amount">{{ donationAmount }}€</div>
       <input #slider type="range" min="1" max="30" class="slider" [(ngModel)]="donationAmount" (ngModelChange)="adjustStyles($event)">
-      <span class="trash-amount">{{ trashAmount() }}kg</span>
+      <span class="trash-amount">{{ trashAmount() }}kg Müll</span>
     </div>
   </div>
 
